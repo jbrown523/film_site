@@ -49,7 +49,7 @@ const App = () => {
           src={SearchIcon}
           alt="Search"
           // On the click event, we are searching dynamically
-          onClick={() => {}}
+          onClick={() => searchMovies(searchTerm)}
         />
       </div>
 
