@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Initialize React component\
+// Initialize React component
 const App = () => {
      return (
           <h1>App</h1>
