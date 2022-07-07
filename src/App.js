@@ -11,6 +11,9 @@ const API_URL = "http://www.omdb.com?api_key=949a38c";
 const App = () => {
   //Gives access to setMovies function
   const { movies, setMovies } = useState([]);
+
+  // Dynamically initialize the search EVENT
+  const [searchTerm, setSearchTerm] = useState([]);
   // Async, takes a moment to fetch
   // Search movies by title
   const searchMovies = async (title) => {
@@ -27,7 +30,7 @@ const App = () => {
   //1st: callback function
   //2nd: empty dependency array, if we ONLY want to call at start
   useEffect(() => {
-    searchMovies(``);
+    searchMovies(`we`);
   }, []);
   return (
     <div className="app">
@@ -35,8 +38,19 @@ const App = () => {
 
       {/*Search Bar*/}
       <div className="search">
-        <input placeholder="Search" value="" onChange={() => {}} />
-        <img src={SearchIcon} alt="Search" onClick={() => {}} />
+        <input
+          placeholder="Search"
+          value={searchTerm}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+          }}
+        />
+        <img
+          src={SearchIcon}
+          alt="Search"
+          // On the click event, we are searching dynamically
+          onClick={() => {}}
+        />
       </div>
 
       {movies?.length > 0 ? (
