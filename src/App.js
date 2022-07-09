@@ -30,7 +30,7 @@ const App = () => {
   //1st: callback function
   //2nd: empty dependency array, if we ONLY want to call at start
   useEffect(() => {
-    searchMovies(`we`);
+    searchMovies(``);
   }, []);
   return (
     <div className="app">
